@@ -17,7 +17,7 @@ function check_load(){
         echo "load directory already exists"
         return 0
     else
-        git clone git@github.com:thewtex/tmux-mem-cpu-load.git "$LOAD_DIR"
+        git clone git://github.com/thewtex/tmux-mem-cpu-load.git "$LOAD_DIR"
         return $?
     fi
 }
