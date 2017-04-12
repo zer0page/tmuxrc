@@ -37,7 +37,7 @@ function cleanup(){
 echo "$DIR"
 check_bin || ((check_load && install_load)|| cleanup)
 if check_bin; then
-    cp $DIR/.tmux.conf ~/
+    cp $DIR/tmux.conf ~/.tmux.conf
     echo "installation successful"
 else
     echo "installation unsuccessful"
