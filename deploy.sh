@@ -3,6 +3,7 @@ set ex
 DIR="$( cd "$(dirname "${BASH_SOURCE[0]}" )" && pwd)"
 LOAD_DIR=/tmp/tmux_load
 LOAD_BIN=/usr/local/bin/tmux-mem-cpu-load
+PLUGIN_DIR=$HOME/.tmux/plugins/tpm
 
 function check_bin(){
     if [ -x "$LOAD_BIN" ]; then
@@ -35,6 +36,7 @@ function cleanup(){
     fi
 }
 echo "$DIR"
+git clone https://github.com/tmux-plugins/tpm $PLUGIN_DIR
 check_bin || ((check_load && install_load)|| cleanup)
 if check_bin; then
     cp $DIR/tmux.conf ~/.tmux.conf
